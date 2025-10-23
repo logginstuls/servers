@@ -6,7 +6,16 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: '*', // o especifica el dominio exacto: 'https://cancelbuypersonas.blob.core.windows.net'
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // <- importante para manejar preflight
+
 app.use(bodyParser.json());
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
